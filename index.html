@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>browser-b0X: free, open-source apps that run on your own computer</title>
+  <meta name="description" content="Free, open-source apps by browser-b0X that run on your own computer: Marteloio for eBay listings, SuperBookmarks for saved links and posts, and Startclip for start commands.">
+  <link rel="canonical" href="https://browser-b0x.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="browser-b0X">
+  <meta property="og:title" content="browser-b0X: free, open-source apps that run on your own computer">
+  <meta property="og:description" content="Marteloio, an eBay listing generator. SuperBookmarks, a local bookmark manager for Windows. Startclip, an offline start-command dashboard. All free and open source.">
+  <meta property="og:url" content="https://browser-b0x.github.io/">
+  <meta property="og:image" content="https://browser-b0x.github.io/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="browser-b0X: free apps that run on your own computer. Marteloio, SuperBookmarks and Startclip.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@browserb0x">
+  <meta name="theme-color" content="#090C11">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" href="fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "browser-b0X",
+    "alternateName": ["browserb0x", "browser-b0x"],
+    "url": "https://browser-b0x.github.io/"
+  }
+  </script>
+  <style>
+    @font-face { font-family: Manrope; font-style: normal; font-display: swap; font-weight: 200 800;
+      src: url(fonts/manrope-latin-ext-wght-normal.woff2) format("woff2");
+      unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+    @font-face { font-family: Manrope; font-style: normal; font-display: swap; font-weight: 200 800;
+      src: url(fonts/manrope-latin-wght-normal.woff2) format("woff2");
+      unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+    @font-face { font-family: "Space Grotesk"; font-style: normal; font-display: swap; font-weight: 300 700;
+      src: url(fonts/space-grotesk-latin-ext-wght-normal.woff2) format("woff2");
+      unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+    @font-face { font-family: "Space Grotesk"; font-style: normal; font-display: swap; font-weight: 300 700;
+      src: url(fonts/space-grotesk-latin-wght-normal.woff2) format("woff2");
+      unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+
+    :root {
+      /* Taken from the browser-b0X logo: the dark disc, the white window bar, the cyan-to-blue and violet sides. */
+      --ink: #090C11; --raised: #0F131B; --rule: #1C2330; --rule-hi: #2C3548;
+      --text: #E8ECF4; --dim: #98A3B8;
+      --cyan: #56D7F6; --blue: #348BE8; --violet: #8E82F2; --lilac: #B3A6FF;
+      --bar: #F4F5F8; --bar-ink: #0B0E14;
+      --display: "Space Grotesk", "Segoe UI", -apple-system, Arial, sans-serif;
+      --body: Manrope, "Segoe UI", -apple-system, Arial, sans-serif;
+      --accent: var(--cyan);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+    body { margin: 0; background: var(--ink); color: var(--text); font: 500 17px/1.6 var(--body); -webkit-font-smoothing: antialiased; }
+    h1, h2 { font-family: var(--display); letter-spacing: -.02em; margin: 0; }
+    p { margin: 0; }
+    a { color: inherit; }
+    a:focus-visible, video:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; border-radius: 4px; }
+    img, video { display: block; max-width: 100%; }
+
+    .skip { position: absolute; left: 16px; top: -64px; z-index: 5; padding: 10px 16px; border-radius: 8px; background: var(--bar); color: var(--bar-ink); font-weight: 700; }
+    .skip:focus { top: 16px; }
+    .wrap { max-width: 1168px; margin: 0 auto; padding: 24px 24px 0; }
+
+    /* The page header is the logo drawn large: a white window bar on a box with a cyan side and a violet side. */
+    .bar { display: flex; align-items: center; gap: 14px; min-height: 52px; padding: 8px 20px; border-radius: 16px 16px 0 0; background: var(--bar); color: var(--bar-ink); }
+    .dots { display: inline-flex; gap: 7px; flex: none; }
+    .dots i { width: 10px; height: 10px; border-radius: 50%; background: var(--bar-ink); }
+    .brand { font: 700 17px/1 var(--display); letter-spacing: -.01em; text-decoration: none; }
+    .bar nav { display: flex; gap: 22px; margin-left: auto; }
+    .bar nav a { font-weight: 700; font-size: 15px; text-decoration: none; }
+    .bar nav a:hover, .brand:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .bar a:focus-visible { outline-color: var(--blue); }
+
+    .hero { position: relative; display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 48px 72px; align-items: end; padding: 72px 64px 64px; background: var(--raised); border-radius: 0 0 16px 16px; overflow: hidden; }
+    .hero::before, .hero::after { content: ""; position: absolute; top: 0; bottom: 0; width: 6px; }
+    .hero::before { left: 0; background: linear-gradient(var(--cyan), var(--blue)); }
+    .hero::after { right: 0; background: linear-gradient(var(--lilac), var(--violet)); }
+    .mark { width: 72px; height: 72px; margin-bottom: 28px; }
+    h1 { font-size: clamp(2.5rem, 5.6vw, 4.5rem); line-height: 1.02; font-weight: 700; max-width: 12ch; }
+    .lede { margin-top: 24px; max-width: 44ch; color: var(--dim); font-size: 1.15rem; line-height: 1.55; }
+
+    .index { list-style: none; margin: 0; padding: 0; }
+    .index a { display: grid; grid-template-columns: 12px minmax(0, 1fr); column-gap: 16px; align-items: baseline; padding: 16px 0; border-top: 1px solid var(--rule-hi); text-decoration: none; }
+    .index li:last-child a { border-bottom: 1px solid var(--rule-hi); }
+    .index a::before { content: ""; width: 12px; height: 12px; border-radius: 3px; background: var(--accent); transform: translateY(1px); }
+    .index b { font: 700 1.3rem/1.2 var(--display); letter-spacing: -.01em; }
+    .index span { grid-column: 2; color: var(--dim); font-size: .95rem; }
+    .index a:hover b { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 5px; text-decoration-thickness: 2px; }
+
+    .app { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 40px 72px; align-items: center; padding: 104px 0; border-top: 1px solid var(--rule); scroll-margin-top: 8px; }
+    .app:first-child { border-top: 0; }
+    .app h2 { font-size: clamp(2rem, 4vw, 2.9rem); line-height: 1.04; font-weight: 700; }
+    .app h2 span { display: block; margin-top: .4em; color: var(--dim); font-size: .56em; font-weight: 500; letter-spacing: -.01em; line-height: 1.2; }
+    .app h2::before { content: ""; display: block; width: 14px; height: 14px; margin-bottom: 20px; border-radius: 3px; background: var(--accent); }
+    .what { margin-top: 24px; max-width: 46ch; }
+    .runs { margin-top: 12px; max-width: 46ch; color: var(--dim); font-size: .95rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .btn { display: inline-flex; align-items: center; min-height: 48px; padding: 0 22px; border: 1px solid var(--rule-hi); border-radius: 10px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: border-color .15s, background-color .15s; }
+    .btn:hover { border-color: var(--text); }
+    .btn.go { border-color: var(--accent); background: var(--accent); color: var(--bar-ink); }
+    .btn.go:hover { border-color: var(--bar); background: var(--bar); }
+
+    .shot { position: relative; margin: 0; border: 1px solid var(--rule-hi); border-radius: 14px; overflow: hidden; background: #000; box-shadow: 0 36px 80px -40px #000; }
+    .shot img, .shot video { width: 100%; height: auto; }
+    .shot video { aspect-ratio: 16 / 9; background: #000; }
+    .tour { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: inline-flex; align-items: center; gap: 14px; padding: 8px 24px 8px 8px; border: 1px solid var(--rule-hi); border-radius: 999px; background: rgba(9, 12, 17, .88); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 18px 44px rgba(0, 0, 0, .5); font-weight: 700; line-height: 1.3; text-decoration: none; white-space: nowrap; transition: border-color .15s; }
+    .tour:hover { border-color: var(--accent); }
+    .tour i { display: grid; place-items: center; flex: none; width: 48px; height: 48px; border-radius: 50%; background: var(--accent); color: var(--bar-ink); }
+    .tour svg { width: 20px; height: 20px; margin-left: 3px; fill: currentColor; }
+    .tour small { display: block; color: var(--dim); font-size: .8rem; font-weight: 500; }
+    .fail { position: absolute; left: 12px; right: 12px; bottom: 12px; padding: 12px 16px; border-radius: 10px; background: rgba(9, 12, 17, .92); font-size: .95rem; }
+
+    .more { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 3fr) minmax(0, 3fr); gap: 48px 72px; padding: 88px 0; border-top: 1px solid var(--rule); }
+    .more h2 { font-size: 1.35rem; line-height: 1.2; font-weight: 700; letter-spacing: -.01em; scroll-margin-top: 24px; }
+    .more p { margin-top: 14px; max-width: 52ch; color: var(--dim); }
+    .more ul { list-style: none; margin: 14px 0 0; padding: 0; }
+    .more li + li { margin-top: 8px; }
+    .more li a, .foot a { text-decoration: underline; text-decoration-color: var(--rule-hi); text-underline-offset: 5px; text-decoration-thickness: 2px; }
+    .more li a:hover, .foot a:hover { text-decoration-color: var(--cyan); }
+    .who { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 24px; align-items: start; }
+    .who img { width: 72px; height: 72px; }
+
+    .foot { padding: 32px 0 56px; border-top: 1px solid var(--rule); color: var(--dim); font-size: .875rem; line-height: 1.6; }
+    .foot p { max-width: 88ch; }
+    .foot p + p { margin-top: 10px; }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: minmax(0, 1fr); padding: 48px 40px; }
+      .app { grid-template-columns: minmax(0, 1fr); padding: 72px 0; }
+      .more { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); padding: 64px 0; }
+      .who { grid-column: 1 / -1; }
+    }
+    @media (max-width: 560px) {
+      body { font-size: 16px; }
+      .wrap { padding: 16px 16px 0; }
+      .bar { gap: 10px; padding: 8px 14px; }
+      .dots { gap: 5px; }
+      .dots i { width: 8px; height: 8px; }
+      .brand { font-size: 15px; }
+      .bar nav { gap: 14px; }
+      .bar nav a { font-size: 14px; }
+      .hero { padding: 36px 24px 32px; }
+      .mark { width: 52px; height: 52px; margin-bottom: 20px; }
+      .app { padding: 56px 0; }
+      .btn { flex: 1 1 auto; justify-content: center; }
+      .tour { gap: 10px; padding: 6px 18px 6px 6px; font-size: .95rem; }
+      .tour i { width: 40px; height: 40px; }
+      .tour svg { width: 17px; height: 17px; }
+      .tour small { display: none; }
+      .more { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+      .who { grid-template-columns: 56px minmax(0, 1fr); gap: 16px; }
+      .who img { width: 56px; height: 56px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .btn, .tour { transition: none; }
+    }
+  </style>
+</head>
+<body>
+<a class="skip" href="#apps">Skip to the apps</a>
+<div class="wrap">
+
+  <header>
+    <div class="bar">
+      <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      <a class="brand" href="./">browser-b0X</a>
+      <nav aria-label="On this page">
+        <a href="#apps">Apps</a>
+        <a href="#about">About</a>
+        <a href="#support">Support</a>
+      </nav>
+    </div>
+    <div class="hero">
+      <div>
+        <img class="mark" src="apple-touch-icon.png" width="180" height="180" alt="browser-b0X logo">
+        <h1>Free apps that run on your own computer.</h1>
+        <p class="lede">Open source, with no account and no subscription. Each one is built by one person and tested by using it.</p>
+      </div>
+      <ul class="index" aria-label="The apps">
+        <li><a href="#marteloio" style="--accent:#FF5A1F"><b>Marteloio</b><span>eBay listing generator</span></a></li>
+        <li><a href="#superbookmarks" style="--accent:#9C8CF2"><b>SuperBookmarks</b><span>Local bookmark manager for Windows</span></a></li>
+        <li><a href="#startclip" style="--accent:#C9F53F"><b>Startclip</b><span>Offline start-command dashboard</span></a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="apps">
+
+    <section class="app" id="marteloio" style="--accent:#FF5A1F">
+      <div>
+        <h2>Marteloio <span>eBay listing generator</span></h2>
+        <p class="what">Type your notes about an item and get an eBay title, item specifics and an HTML description to paste in. It works with free AI keys, and every fact stays yours to check.</p>
+        <p class="runs">Free and open source. Windows 10 and 11.</p>
+        <div class="actions">
+          <a class="btn go" href="https://browser-b0x.github.io/marteloio/">Visit Marteloio</a>
+          <a class="btn" href="https://github.com/browser-b0X/marteloio">Source on GitHub</a>
+        </div>
+      </div>
+      <figure class="shot">
+        <img src="img/marteloio.webp" width="1800" height="1200" alt="Marteloio turning notes about a film camera into an eBay title and a listing preview" decoding="async">
+        <a class="tour" href="https://github.com/user-attachments/assets/82a54639-f48c-495b-b00c-38b58c5dc29d" data-tour="Marteloio tour video"><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></i><span>Watch the tour<small>Loads when you press play</small></span></a>
+      </figure>
+    </section>
+
+    <section class="app" id="superbookmarks" style="--accent:#9C8CF2">
+      <div>
+        <h2>SuperBookmarks <span>Local bookmark manager for Windows</span></h2>
+        <p class="what">One library for browser bookmarks, Telegram and WhatsApp links and the posts you save from X, Instagram and TikTok. It keeps an offline copy of every page, so a link still opens after the site is gone.</p>
+        <p class="runs">Free and open source. Windows 10 and 11.</p>
+        <div class="actions">
+          <a class="btn go" href="https://browser-b0x.github.io/super-bookmark-manager/">Visit SuperBookmarks</a>
+          <a class="btn" href="https://github.com/browser-b0X/super-bookmark-manager">Source on GitHub</a>
+        </div>
+      </div>
+      <figure class="shot">
+        <img src="img/superbookmarks.webp" width="1440" height="1064" alt="SuperBookmarks home screen with a new link to sort and a shelf of saved posts" loading="lazy" decoding="async">
+        <a class="tour" href="https://github.com/user-attachments/assets/2b40dee2-304f-4e44-9e5c-49e4531d1da5" data-tour="SuperBookmarks tour video"><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></i><span>Watch the tour<small>Loads when you press play</small></span></a>
+      </figure>
+    </section>
+
+    <section class="app" id="startclip" style="--accent:#C9F53F">
+      <div>
+        <h2>Startclip <span>Offline start-command dashboard</span></h2>
+        <p class="what">One HTML file that maps the apps on your own machine: Docker stacks, local model servers and AI agents. Click a card and its start command is copied. Nothing runs.</p>
+        <p class="runs">Free and open source. Any modern browser, with shortcuts for Linux and Windows.</p>
+        <div class="actions">
+          <a class="btn go" href="https://browser-b0x.github.io/startclip/">Visit Startclip</a>
+          <a class="btn" href="https://github.com/browser-b0X/startclip">Source on GitHub</a>
+        </div>
+      </div>
+      <figure class="shot">
+        <img src="img/startclip.webp" width="1440" height="900" alt="Startclip showing a map of local model servers with one start command ready to copy" loading="lazy" decoding="async">
+        <a class="tour" href="https://browser-b0x.github.io/startclip/media/film-16x9.mp4" data-tour="Startclip tour video"><i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></i><span>Watch the tour<small>Loads when you press play</small></span></a>
+      </figure>
+    </section>
+
+  </main>
+
+  <div class="more">
+    <section class="who" aria-labelledby="about">
+      <img src="apple-touch-icon.png" width="180" height="180" alt="" loading="lazy">
+      <div>
+        <h2 id="about">Who makes these</h2>
+        <p>I'm an aircraft mechanic. I design each app, direct the build with Claude Code and test every change by using it. Everything here is free and open source, and it runs on your own computer.</p>
+      </div>
+    </section>
+    <section aria-labelledby="support">
+      <h2 id="support">Support the work</h2>
+      <p>The apps are free and stay free. If one saves you time, you can chip in.</p>
+      <ul>
+        <li><a href="https://ko-fi.com/browserb0x">Ko-fi</a></li>
+        <li><a href="https://buymeacoffee.com/browserbox">Buy Me a Coffee</a></li>
+      </ul>
+    </section>
+    <section aria-labelledby="follow">
+      <h2 id="follow">Follow the build</h2>
+      <ul>
+        <li><a href="https://x.com/browserb0x">X</a></li>
+        <li><a href="https://www.youtube.com/@browser-b0x">YouTube</a></li>
+        <li><a href="https://github.com/browser-b0X">GitHub</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <footer class="foot">
+    <p>The code is MIT licensed, copyright 2026 browser-b0X. The app names and logos are the projects' trademarks.</p>
+    <p>eBay, X, Instagram, TikTok, Telegram, WhatsApp, Docker and Windows are trademarks of their owners. These apps are independent projects and are not affiliated with or endorsed by any of them.</p>
+  </footer>
+
+</div>
+<script>
+  // "Watch the tour" loads the video only when it is pressed. Without JavaScript the link opens the video on its own.
+  document.querySelectorAll("[data-tour]").forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      var shot = link.closest(".shot");
+      var image = shot.querySelector("img");
+      var video = document.createElement("video");
+      video.controls = true;
+      video.playsInline = true;
+      video.preload = "auto";
+      video.setAttribute("aria-label", link.getAttribute("data-tour"));
+      video.addEventListener("error", function () {
+        var note = document.createElement("p");
+        var open = document.createElement("a");
+        note.className = "fail";
+        open.href = link.href;
+        open.textContent = "Open it on its own";
+        note.append("The video did not load. ", open, ".");
+        image.hidden = false;
+        video.replaceWith(note);
+      });
+      video.src = link.href;
+      image.hidden = true;
+      link.replaceWith(video);
+      video.focus();
+      var started = video.play();
+      if (started && started.catch) started.catch(function () {});
+    });
+  });
+</script>
+</body>
+</html>
